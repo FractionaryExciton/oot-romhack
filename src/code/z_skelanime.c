@@ -1632,6 +1632,8 @@ void SkelAnime_AnimateFrame(SkelAnime* skelAnime) {
  * Advances an animation that loops over its full length and updates the frame tables
  */
 s32 SkelAnime_LoopFull(SkelAnime* skelAnime) {
+    // Originally: 20 * 1 / 3 = 20 * 0.333 = 6.66
+    // Now: 60 * 1 / 3 = 60 * 0.333 = 20 (not implemented)
     f32 updateRate = R_UPDATE_RATE * (1.0f / 3.0f);
 
     skelAnime->curFrame += skelAnime->playSpeed * updateRate;
@@ -1648,6 +1650,7 @@ s32 SkelAnime_LoopFull(SkelAnime* skelAnime) {
  * Advances an animation that loops over part of its length and updates the frame tables
  */
 s32 SkelAnime_LoopPartial(SkelAnime* skelAnime) {
+    // Changes animation speed
     f32 updateRate = R_UPDATE_RATE * (1.0f / 3.0f);
 
     skelAnime->curFrame += skelAnime->playSpeed * updateRate;
@@ -1730,6 +1733,7 @@ void Animation_ChangeImpl(SkelAnime* skelAnime, AnimationHeader* animation, f32 
             skelAnime->endFrame = skelAnime->animLength - 1.0f;
         }
     }
+    // Controls current frame? Too high and their animations wont go on i think
     skelAnime->playSpeed = playSpeed;
 }
 

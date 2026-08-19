@@ -14,7 +14,7 @@ SHELL = /usr/bin/env bash
 -include .make_options.mk
 
 # If COMPARE is 1, check the output md5sum after building. Set to 0 when modding.
-COMPARE ?= 1
+COMPARE ?= 0
 # If NON_MATCHING is 1, define the NON_MATCHING C flag when building. Set to 1 when modding.
 NON_MATCHING ?= 0
 # If ORIG_COMPILER is 1, compile with QEMU_IRIX and the original compiler.

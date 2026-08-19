@@ -328,10 +328,12 @@ void KaleidoScope_DrawInventoryEditor(PlayState* play) {
     KaleidoScope_DrawDigit(play, digitBuf[2], 172, 15);
     KaleidoScope_DrawDigit(play, digitBuf[3], 182, 15);
 
+    // START: MODIFIED
     // Inventory
     for (slot = 0, i = 0, y = 35; i < 4; i++, y += 15) {
-        for (j = 0, x = 78; j < 6; j++, slot++, x += 26) {
-            digitBuf[2] = 0;
+        for (j = 0, x = 78; j < 6; j++, slot++, x += 36) {  // 26 -> 36
+            digitBuf[1] = 0;  // hundreds (new)
+            digitBuf[2] = 0;  // tens
 
             if ((slot <= SLOT_BOW) || (slot == SLOT_SLINGSHOT) || (slot == SLOT_BOMBCHU) || (slot == SLOT_MAGIC_BEAN)) {
                 digitBuf[3] = AMMO(gAmmoItems[slot]);
@@ -342,18 +344,25 @@ void KaleidoScope_DrawInventoryEditor(PlayState* play) {
             }
 
             if (digitBuf[3] != ITEM_NONE) {
+                while (digitBuf[3] >= 100) {   // new
+                    digitBuf[1]++;
+                    digitBuf[3] -= 100;
+                }
                 while (digitBuf[3] >= 10) {
                     digitBuf[2]++;
                     digitBuf[3] -= 10;
                 }
             } else {
-                digitBuf[2] = digitBuf[3] = 0;
+                digitBuf[1] = digitBuf[2] = digitBuf[3] = 0;
             }
 
-            KaleidoScope_DrawDigit(play, digitBuf[2], x, y);
-            KaleidoScope_DrawDigit(play, digitBuf[3], x + 10, y);
+            KaleidoScope_DrawDigit(play, digitBuf[1], x, y);        // hundreds (new)
+            KaleidoScope_DrawDigit(play, digitBuf[2], x + 10, y);
+            KaleidoScope_DrawDigit(play, digitBuf[3], x + 20, y);   // shifted from x+10
         }
     }
+
+    // END: MODIFIED; Added support for indexes higher than 99
 
     // Keys
     for (digitBuf[1] = 78, i = 0; i < 17; i++) {
@@ -607,6 +616,8 @@ void KaleidoScope_DrawInventoryEditor(PlayState* play) {
                             gSaveContext.save.info.inventory.items[i]--;
                         }
                     }
+
+                // START: MODIFIED 
                 } else if (i == SLOT_TRADE_ADULT) {
                     if (CHECK_BTN_ALL(input->press.button, BTN_CUP)) {
                         Inventory_DeleteItem(ITEM_POCKET_EGG, SLOT(ITEM_POCKET_EGG));
@@ -614,17 +625,22 @@ void KaleidoScope_DrawInventoryEditor(PlayState* play) {
                         if (gSaveContext.save.info.inventory.items[i] == ITEM_NONE) {
                             gSaveContext.save.info.inventory.items[i] = ITEM_POCKET_EGG;
                         } else if ((gSaveContext.save.info.inventory.items[i] >= ITEM_POCKET_EGG) &&
-                                   (gSaveContext.save.info.inventory.items[i] < ITEM_CLAIM_CHECK)) {
+                                (gSaveContext.save.info.inventory.items[i] < ITEM_CLAIM_CHECK)) {
                             gSaveContext.save.info.inventory.items[i]++;
+                        } else if (gSaveContext.save.info.inventory.items[i] == ITEM_CLAIM_CHECK) {
+                            gSaveContext.save.info.inventory.items[i] = ITEM_CUSTOM_ITEM;
                         }
                     } else if (CHECK_BTN_ALL(input->press.button, BTN_CRIGHT)) {
                         if (gSaveContext.save.info.inventory.items[i] == ITEM_NONE) {
                             gSaveContext.save.info.inventory.items[i] = ITEM_CLAIM_CHECK;
                         } else if ((gSaveContext.save.info.inventory.items[i] > ITEM_POCKET_EGG) &&
-                                   (gSaveContext.save.info.inventory.items[i] <= ITEM_CLAIM_CHECK)) {
+                                (gSaveContext.save.info.inventory.items[i] <= ITEM_CLAIM_CHECK)) {
                             gSaveContext.save.info.inventory.items[i]--;
+                        } else if (gSaveContext.save.info.inventory.items[i] == ITEM_CUSTOM_ITEM) {
+                            gSaveContext.save.info.inventory.items[i] = ITEM_CLAIM_CHECK;
                         }
                     }
+                // END: MODIFIED; Added support for CUSTOM_ITEM in the adult trade slot in the debug menu
                 } else if (i == SLOT_TRADE_CHILD) {
                     if (CHECK_BTN_ALL(input->press.button, BTN_CUP)) {
                         Inventory_DeleteItem(ITEM_WEIRD_EGG, SLOT(ITEM_WEIRD_EGG));

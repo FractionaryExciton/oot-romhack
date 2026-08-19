@@ -97,6 +97,7 @@ extern u64 gItemIconAdultsWalletTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIG
 extern u64 gItemIconGiantsWalletTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)];
 extern u64 gItemIconDekuSeedsTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)];
 extern u64 gItemIconFishingPoleTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)];
+extern u64 gItemIconCustomItemTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)];
 
 #define HEART_PIECE_ICON_TEX_WIDTH 48
 #define HEART_PIECE_ICON_TEX_HEIGHT 48
@@ -204,5 +205,32 @@ extern Gfx gCButtonIconsDL[11];
 extern Gfx gAButtonIconDL[11];
 extern Gfx gPromptCursorLeftDL[10];
 extern Gfx gPromptCursorRightDL[10];
+
+extern Gfx gPlaceholderTex1[10];
+extern Gfx gPlaceholderTex2[10];
+extern Gfx gPlaceholderTex3[10];
+extern Gfx gPlaceholderTex4[10];
+extern Gfx gPlaceholderTex5[10];
+extern Gfx gPlaceholderTex6[10];
+extern Gfx gPlaceholderTex7[10];
+extern Gfx gPlaceholderTex8[10];
+extern Gfx gPlaceholderTex9[10];
+extern Gfx gPlaceholderTex10[10];
+extern Gfx gPlaceholderTex11[10];
+extern Gfx gPlaceholderTex12[10];
+extern Gfx gPlaceholderTex13[10];
+extern Gfx gPlaceholderTex14[10];
+extern Gfx gPlaceholderTex15[10];
+extern Gfx gPlaceholderTex16[10];
+extern Gfx gPlaceholderTex17[10];
+extern Gfx gPlaceholderTex18[10];
+extern Gfx gPlaceholderTex19[10];
+extern Gfx gPlaceholderTex20[10];
+extern Gfx gPlaceholderTex21[10];
+extern Gfx gPlaceholderTex22[10];
+extern Gfx gPlaceholderTex23[10];
+extern Gfx gPlaceholderTex24[10];
+extern Gfx gPlaceholderTex25[10];
+extern Gfx gPlaceholderTex26[10];
 
 #endif

@@ -28,6 +28,13 @@
 #include "player.h"
 #include "save.h"
 
+// START: MODIFIED
+
+// temporary - add near wherever R_UPDATE_RATE is declared/used, e.g. in a shared header
+//#define SET_UPDATE_RATE(val, tag) do { R_UPDATE_RATE = (val); PRINTF("UPDATE_RATE=%d @ %s\n", (val), tag); } while (0)
+
+// END: MODIFIED; Added function to see framerate or smth idk
+
 #include "assets/textures/icon_item_static/icon_item_static.h"
 #include "assets/textures/icon_item_24_static/icon_item_24_static.h"
 #if OOT_NTSC
@@ -4641,7 +4648,9 @@ void KaleidoScope_Update(PlayState* play) {
                 if (interfaceCtx->unk_244 >= 255) {
                     interfaceCtx->unk_244 = 255;
                     pauseCtx->state = PAUSE_STATE_OFF;
-                    R_UPDATE_RATE = 3;
+                    // START: MODIFIED
+                    R_UPDATE_RATE = 2;
+                    // END: MODIFIED; Changed framerate from 20 to 30
                     R_PAUSE_BG_PRERENDER_STATE = PAUSE_BG_PRERENDER_OFF;
                     func_800981B8(&play->objectCtx);
                     func_800418D0(&play->colCtx, play);
@@ -4701,7 +4710,11 @@ void KaleidoScope_Update(PlayState* play) {
 
         case PAUSE_STATE_RESUME_GAMEPLAY:
             pauseCtx->state = PAUSE_STATE_OFF;
-            R_UPDATE_RATE = 3;
+            // FPS after resuming gameplay
+            // START: MODIFIED
+            R_UPDATE_RATE = 2;
+            // SET_UPDATE_RATE(1, "after pause");
+            // END: MODIFIED; Changed framerate from 20 to 30
             R_PAUSE_BG_PRERENDER_STATE = PAUSE_BG_PRERENDER_OFF;
 
             func_800981B8(&play->objectCtx);

@@ -195,9 +195,14 @@ void Interface_Init(PlayState* play) {
 
     R_ITEM_BTN_X(0) = B_BUTTON_X;
 
-    R_B_BTN_COLOR(0) = B_BUTTON_R;
-    R_B_BTN_COLOR(1) = B_BUTTON_G;
-    R_B_BTN_COLOR(2) = B_BUTTON_B;
+    // START: MODIFIED
+
+    // Left Button
+    R_B_BTN_COLOR(0) = 255; // B Button R
+    R_B_BTN_COLOR(1) = 255; // B Button G
+    R_B_BTN_COLOR(2) = 0;   // B Button B
+
+    // END: MODIFIED; Changed colors and added comments to indicate which button and colors are being modified
 
     R_ITEM_ICON_X(0) = B_BUTTON_X;
     R_ITEM_AMMO_X(0) = B_BUTTON_X + 2;
@@ -205,9 +210,13 @@ void Interface_Init(PlayState* play) {
     R_A_BTN_X = A_BUTTON_X;
     R_A_ICON_X = A_BUTTON_X;
 
-    R_A_BTN_COLOR(0) = A_BUTTON_R;
-    R_A_BTN_COLOR(1) = A_BUTTON_G;
-    R_A_BTN_COLOR(2) = A_BUTTON_B;
+    // START: MODIFIED
+
+    R_A_BTN_COLOR(0) = 255; // A Button R
+    R_A_BTN_COLOR(1) = 128; // A Button G
+    R_A_BTN_COLOR(2) = 95; // A Button B
+
+    // END: MODIFIED; Changed colors and added comments to indicate which button and colors are being modified
 }
 
 #define TEXTBOX_SEGMENT_SIZE \
@@ -362,9 +371,11 @@ void Regs_InitDataImpl(void) {
     ZREG(36) = 0;
     ZREG(37) = 0;
     ZREG(38) = 0;
-    R_C_BTN_COLOR(0) = 255;
-    R_C_BTN_COLOR(1) = 160;
-    R_C_BTN_COLOR(2) = 0;
+    // START: MODIFIED
+    R_C_BTN_COLOR(0) = 255; // C Button R
+    R_C_BTN_COLOR(1) = 128; // C Button G
+    R_C_BTN_COLOR(2) = 0;   // C Button B
+    // END: MODIFIED; Changed colors and added comments to indicate which button and colors are being modified
     ZREG(46) = 1;
     ZREG(47) = 1;
 

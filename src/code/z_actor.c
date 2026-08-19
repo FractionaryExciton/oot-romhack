@@ -983,6 +983,8 @@ void Actor_Destroy(Actor* actor, PlayState* play) {
  * Update actor's position factoring in velocity and collider displacement
  */
 void Actor_UpdatePos(Actor* actor) {
+    // Too big multiplier = Link goes too fast
+    // Default is 0.5f, preferred is 0.6f or even 0.55f
     f32 speedRate = R_UPDATE_RATE * 0.5f;
 
     actor->world.pos.x += (actor->velocity.x * speedRate) + actor->colChkInfo.displacement.x;

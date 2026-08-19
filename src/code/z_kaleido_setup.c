@@ -119,7 +119,7 @@ void KaleidoSetup_Update(PlayState* play) {
 
         if (pauseCtx->state == PAUSE_STATE_WAIT_LETTERBOX) {
             R_PAUSE_PAGES_Y_ORIGIN_2 = PAUSE_PAGES_Y_ORIGIN_2_LOWER;
-            R_UPDATE_RATE = 2;
+            R_UPDATE_RATE = 1; // MODIFIED; Changed framerate from 30 to 60 FPS after pausing
 
             if (Letterbox_GetSizeTarget() != 0) {
                 Letterbox_SetSizeTarget(0);

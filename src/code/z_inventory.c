@@ -219,66 +219,100 @@ void* gItemIcons[] = {
     gOcarinaBtnIconCLeftTex,  // ITEM_INVALID_5
     gOcarinaBtnIconCRightTex, // ITEM_INVALID_6
     gOcarinaBtnIconATex,      // ITEM_INVALID_7
+    // START: MODIFIED
+    gPlaceholderTex1,
+    gPlaceholderTex2,
+    gPlaceholderTex3,
+    gPlaceholderTex4,
+    gPlaceholderTex5,
+    gPlaceholderTex6,
+    gPlaceholderTex7,
+    gPlaceholderTex8,
+    gPlaceholderTex9,
+    gPlaceholderTex10,
+    gPlaceholderTex11,
+    gPlaceholderTex12,
+    gPlaceholderTex13,
+    gPlaceholderTex14,
+    gPlaceholderTex15,
+    gPlaceholderTex16,
+    gPlaceholderTex17,
+    gPlaceholderTex18,
+    gPlaceholderTex19,
+    gPlaceholderTex20,
+    gPlaceholderTex21,
+    gPlaceholderTex22,
+    gPlaceholderTex23,
+    gPlaceholderTex24,
+    gPlaceholderTex25,
+    gPlaceholderTex26,
+    gItemIconCustomItemTex,
+    // END: MODIFIED; Added padding so that the texture shows on the item
 };
 
 // Used to map item IDs to inventory slots
 u8 gItemSlots[] = {
-    SLOT_DEKU_STICK,    // ITEM_DEKU_STICK
-    SLOT_DEKU_NUT,      // ITEM_DEKU_NUT
-    SLOT_BOMB,          // ITEM_BOMB
-    SLOT_BOW,           // ITEM_BOW
-    SLOT_ARROW_FIRE,    // ITEM_ARROW_FIRE
-    SLOT_DINS_FIRE,     // ITEM_DINS_FIRE
-    SLOT_SLINGSHOT,     // ITEM_SLINGSHOT
-    SLOT_OCARINA,       // ITEM_OCARINA_FAIRY
-    SLOT_OCARINA,       // ITEM_OCARINA_OF_TIME
-    SLOT_BOMBCHU,       // ITEM_BOMBCHU
-    SLOT_HOOKSHOT,      // ITEM_HOOKSHOT
-    SLOT_HOOKSHOT,      // ITEM_LONGSHOT
-    SLOT_ARROW_ICE,     // ITEM_ARROW_ICE
-    SLOT_FARORES_WIND,  // ITEM_FARORES_WIND
-    SLOT_BOOMERANG,     // ITEM_BOOMERANG
-    SLOT_LENS_OF_TRUTH, // ITEM_LENS_OF_TRUTH
-    SLOT_MAGIC_BEAN,    // ITEM_MAGIC_BEAN
-    SLOT_HAMMER,        // ITEM_HAMMER
-    SLOT_ARROW_LIGHT,   // ITEM_ARROW_LIGHT
-    SLOT_NAYRUS_LOVE,   // ITEM_NAYRUS_LOVE
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_EMPTY
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_RED
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_GREEN
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_BLUE
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_FAIRY
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_FISH
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_MILK_FULL
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_RUTOS_LETTER
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BLUE_FIRE
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BUG
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BIG_POE
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_MILK_HALF
-    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POE
-    SLOT_TRADE_CHILD,   // ITEM_WEIRD_EGG
-    SLOT_TRADE_CHILD,   // ITEM_CHICKEN
-    SLOT_TRADE_CHILD,   // ITEM_ZELDAS_LETTER
-    SLOT_TRADE_CHILD,   // ITEM_MASK_KEATON
-    SLOT_TRADE_CHILD,   // ITEM_MASK_SKULL
-    SLOT_TRADE_CHILD,   // ITEM_MASK_SPOOKY
-    SLOT_TRADE_CHILD,   // ITEM_MASK_BUNNY_HOOD
-    SLOT_TRADE_CHILD,   // ITEM_MASK_GORON
-    SLOT_TRADE_CHILD,   // ITEM_MASK_ZORA
-    SLOT_TRADE_CHILD,   // ITEM_MASK_GERUDO
-    SLOT_TRADE_CHILD,   // ITEM_MASK_TRUTH
-    SLOT_TRADE_CHILD,   // ITEM_SOLD_OUT
-    SLOT_TRADE_ADULT,   // ITEM_POCKET_EGG
-    SLOT_TRADE_ADULT,   // ITEM_POCKET_CUCCO
-    SLOT_TRADE_ADULT,   // ITEM_COJIRO
-    SLOT_TRADE_ADULT,   // ITEM_ODD_MUSHROOM
-    SLOT_TRADE_ADULT,   // ITEM_ODD_POTION
-    SLOT_TRADE_ADULT,   // ITEM_POACHERS_SAW
-    SLOT_TRADE_ADULT,   // ITEM_BROKEN_GORONS_SWORD
-    SLOT_TRADE_ADULT,   // ITEM_PRESCRIPTION
-    SLOT_TRADE_ADULT,   // ITEM_EYEBALL_FROG
-    SLOT_TRADE_ADULT,   // ITEM_EYE_DROPS
-    SLOT_TRADE_ADULT,   // ITEM_CLAIM_CHECK
+
+    // START: MODIFIED
+    SLOT_DEKU_STICK,    // ITEM_DEKU_STICK          0x00
+    SLOT_DEKU_NUT,      // ITEM_DEKU_NUT            0x01
+    SLOT_BOMB,          // ITEM_BOMB                0x02
+    SLOT_BOW,           // ITEM_BOW                 0x03
+    SLOT_ARROW_FIRE,    // ITEM_ARROW_FIRE          0x04
+    SLOT_DINS_FIRE,     // ITEM_DINS_FIRE           0x05
+    SLOT_SLINGSHOT,     // ITEM_SLINGSHOT           0x06
+    SLOT_OCARINA,       // ITEM_OCARINA_FAIRY       0x07
+    SLOT_OCARINA,       // ITEM_OCARINA_OF_TIME     0x07
+    SLOT_BOMBCHU,       // ITEM_BOMBCHU             0x08
+    SLOT_HOOKSHOT,      // ITEM_HOOKSHOT            0x09
+    SLOT_HOOKSHOT,      // ITEM_LONGSHOT            0x09
+    SLOT_ARROW_ICE,     // ITEM_ARROW_ICE           0x0A
+    SLOT_FARORES_WIND,  // ITEM_FARORES_WIND        0x0B
+    SLOT_BOOMERANG,     // ITEM_BOOMERANG           0x0C
+    SLOT_LENS_OF_TRUTH, // ITEM_LENS_OF_TRUTH       0x0C
+    SLOT_MAGIC_BEAN,    // ITEM_MAGIC_BEAN          0x0E
+    SLOT_HAMMER,        // ITEM_HAMMER              0x0F
+    SLOT_ARROW_LIGHT,   // ITEM_ARROW_LIGHT         0x10
+    SLOT_NAYRUS_LOVE,   // ITEM_NAYRUS_LOVE         0x11
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_EMPTY        0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_RED   0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_GREEN 0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POTION_BLUE  0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_FAIRY        0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_FISH         0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_MILK_FULL    0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_RUTOS_LETTER 0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BLUE_FIRE    0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BUG          0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_BIG_POE      0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_MILK_HALF    0x12
+    SLOT_BOTTLE_1,      // ITEM_BOTTLE_POE          0x12
+    SLOT_TRADE_CHILD,   // ITEM_WEIRD_EGG           0x13
+    SLOT_TRADE_CHILD,   // ITEM_CHICKEN             0x13
+    SLOT_TRADE_CHILD,   // ITEM_ZELDAS_LETTER       0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_KEATON         0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_SKULL          0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_SPOOKY         0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_BUNNY_HOOD     0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_GORON          0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_ZORA           0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_GERUDO         0x13
+    SLOT_TRADE_CHILD,   // ITEM_MASK_TRUTH          0x13
+    SLOT_TRADE_CHILD,   // ITEM_SOLD_OUT            0x13
+    SLOT_TRADE_ADULT,   // ITEM_POCKET_EGG          0x14
+    SLOT_TRADE_ADULT,   // ITEM_POCKET_CUCCO        0x14
+    SLOT_TRADE_ADULT,   // ITEM_COJIRO              0x14
+    SLOT_TRADE_ADULT,   // ITEM_ODD_MUSHROOM        0x14
+    SLOT_TRADE_ADULT,   // ITEM_ODD_POTION          0x14
+    SLOT_TRADE_ADULT,   // ITEM_POACHERS_SAW        0x14
+    SLOT_TRADE_ADULT,   // ITEM_BROKEN_GORONS_SWORD 0x14
+    SLOT_TRADE_ADULT,   // ITEM_PRESCRIPTION        0x14
+    SLOT_TRADE_ADULT,   // ITEM_EYEBALL_FROG        0x14
+    SLOT_TRADE_ADULT,   // ITEM_EYE_DROPS           0x14
+    SLOT_TRADE_ADULT,   // ITEM_CLAIM_CHECK         0x14
+    SLOT_TRADE_ADULT,   // ITEM_CUSTOM_ITEM         0x14
+
+    // END: MODIFIED; Added hex values and support for CUSTOM_ITEM
 };
 
 void Inventory_ChangeEquipment(s16 equipment, u16 value) {
@@ -319,3 +353,8 @@ void Inventory_ChangeUpgrade(s16 upgrade, s16 value) {
     gSaveContext.save.info.inventory.upgrades &= gUpgradeNegMasks[upgrade];
     gSaveContext.save.info.inventory.upgrades |= value << gUpgradeShifts[upgrade];
 }
+
+/*if (itemId == ITEM_CUSTOM_ITEM) {
+    return gItemIconCustomItemTex;
+}
+*/

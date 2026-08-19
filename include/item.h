@@ -308,6 +308,9 @@ typedef enum ItemID {
     /* 0x99 */ ITEM_DEKU_STICK_UPGRADE_30,
     /* 0x9A */ ITEM_DEKU_NUT_UPGRADE_30,
     /* 0x9B */ ITEM_DEKU_NUT_UPGRADE_40,
+    // START: MODIFIED
+    /* 0x9C */ ITEM_CUSTOM_ITEM,
+    // END: MODIFIED; Added CUSTOM_ITEM
     /* 0xFC */ ITEM_SWORD_CS = 0xFC,
     /* 0xFE */ ITEM_NONE_FE = 0xFE,
     /* 0xFF */ ITEM_NONE = 0xFF
@@ -444,7 +447,39 @@ typedef enum GetItemID {
     /* 0x7B */ GI_BULLET_BAG_50,
     /* 0x7C */ GI_ICE_TRAP, // freezes link when opened from a chest
     /* 0x7D */ GI_TEXT_0, // no model appears over Link, shows text id 0 (pocket egg)
-    /* 0x7E */ GI_MAX
+    // START: MODIFIED
+    /* 0x7E */ GI_PLACEHOLDER_1,
+    /* 0x7F */ GI_PLACEHOLDER_2,
+    /* 0x80 */ GI_PLACEHOLDER_3,
+    /* 0x81 */ GI_PLACEHOLDER_4,
+    /* 0x82 */ GI_PLACEHOLDER_5,
+    /* 0x83 */ GI_PLACEHOLDER_6,
+    /* 0x84 */ GI_PLACEHOLDER_7,
+    /* 0x85 */ GI_PLACEHOLDER_8,
+    /* 0x86 */ GI_PLACEHOLDER_9,
+    /* 0x87 */ GI_PLACEHOLDER_10,
+    /* 0x88 */ GI_PLACEHOLDER_11,
+    /* 0x89 */ GI_PLACEHOLDER_12,
+    /* 0x8A */ GI_PLACEHOLDER_13,
+    /* 0x8B */ GI_PLACEHOLDER_14,
+    /* 0x8C */ GI_PLACEHOLDER_15,
+    /* 0x8D */ GI_PLACEHOLDER_16,
+    /* 0x8E */ GI_PLACEHOLDER_17,
+    /* 0x8F */ GI_PLACEHOLDER_18,
+    /* 0x91 */ GI_PLACEHOLDER_19,
+    /* 0x92 */ GI_PLACEHOLDER_20,
+    /* 0x93 */ GI_PLACEHOLDER_21,
+    /* 0x94 */ GI_PLACEHOLDER_22,
+    /* 0x95 */ GI_PLACEHOLDER_23,
+    /* 0x96 */ GI_PLACEHOLDER_24,
+    /* 0x97 */ GI_PLACEHOLDER_25,
+    /* 0x98 */ GI_PLACEHOLDER_26,
+    /* 0x99 */ GI_PLACEHOLDER_27,
+    /* 0x9A */ GI_PLACEHOLDER_28,
+    /* 0x9B */ GI_PLACEHOLDER_29,
+    /* 0x9C */ GI_CUSTOM_ITEM,
+    /* 0x9D */ GI_MAX
+    // END: MODIFIED; Added placeholders, CUSTOM_ITEM and changed hex in the comments
 } GetItemID;
 
 typedef enum GetItemDrawID {
@@ -565,7 +600,49 @@ typedef enum GetItemDrawID {
     /* 0x72 */ GID_BULLET_BAG_50,
     /* 0x73 */ GID_SWORD_KOKIRI,
     /* 0x74 */ GID_SKULL_TOKEN_2,
-    /* 0x75 */ GID_MAX
+    // START: MODIFIED
+    /* 0x75 */ GID_PLACEHOLDER_1,
+    /* 0x76 */ GID_PLACEHOLDER_2,
+    /* 0x77 */ GID_PLACEHOLDER_3,
+    /* 0x78 */ GID_PLACEHOLDER_4,
+    /* 0x79 */ GID_PLACEHOLDER_5,
+    /* 0x7A */ GID_PLACEHOLDER_6,
+    /* 0x7B */ GID_PLACEHOLDER_7,
+    /* 0x7C */ GID_PLACEHOLDER_8,
+    /* 0x7D */ GID_PLACEHOLDER_9,
+    /* 0x7E */ GID_PLACEHOLDER_10,
+    /* 0x7F */ GID_PLACEHOLDER_11,
+    /* 0x80 */ GID_PLACEHOLDER_12,
+    /* 0x81 */ GID_PLACEHOLDER_13,
+    /* 0x82 */ GID_PLACEHOLDER_14,
+    /* 0x83 */ GID_PLACEHOLDER_15,
+    /* 0x84 */ GID_PLACEHOLDER_16,
+    /* 0x85 */ GID_PLACEHOLDER_17,
+    /* 0x86 */ GID_PLACEHOLDER_18,
+    /* 0x87 */ GID_PLACEHOLDER_19,
+    /* 0x88 */ GID_PLACEHOLDER_20,
+    /* 0x89 */ GID_PLACEHOLDER_21,
+    /* 0x8A */ GID_PLACEHOLDER_22,
+    /* 0x8B */ GID_PLACEHOLDER_23,
+    /* 0x8C */ GID_PLACEHOLDER_24,
+    /* 0x8D */ GID_PLACEHOLDER_25,
+    /* 0x8E */ GID_PLACEHOLDER_26,
+    /* 0x8F */ GID_PLACEHOLDER_27,
+    /* 0x90 */ GID_PLACEHOLDER_28,
+    /* 0x91 */ GID_PLACEHOLDER_29,
+    /* 0x92 */ GID_PLACEHOLDER_30,
+    /* 0x93 */ GID_PLACEHOLDER_31,
+    /* 0x94 */ GID_PLACEHOLDER_32,
+    /* 0x95 */ GID_PLACEHOLDER_33,
+    /* 0x96 */ GID_PLACEHOLDER_34,
+    /* 0x97 */ GID_PLACEHOLDER_35,
+    /* 0x98 */ GID_PLACEHOLDER_36,
+    /* 0x99 */ GID_PLACEHOLDER_37,
+    /* 0x9A */ GID_PLACEHOLDER_38,
+    /* 0x9B */ GID_PLACEHOLDER_39,
+    /* 0x9C */ GID_CUSTOM_ITEM,
+    /* 0x9D */ GID_MAX
+    // END: MODIFIED; Added placeholders, CUSTOM_ITEM and changed hex in the comments
 } GetItemDrawID;
 
 typedef enum ExchangeItemID {

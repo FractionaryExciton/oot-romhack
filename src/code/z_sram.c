@@ -101,8 +101,10 @@ static SavePlayerData sNewSavePlayerData = {
         FILENAME_SPACE,
     },                  // playerName
     0,                  // n64ddFlag
-    0x30,               // healthCapacity
-    0x30,               // defense
+    // START: MODIFIED
+    0x50,               // healthCapacity
+    0x50,               // defense or health
+    // END: MODIFIED; Added comments to indicate what each value represents
     0,                  // magicLevel
     MAGIC_NORMAL_METER, // magic
     0,                  // rupees
@@ -249,8 +251,10 @@ static SavePlayerData sDebugSavePlayerData = {
     }, // playerName
 #endif
     0,                  // n64ddFlag
-    0xE0,               // healthCapacity
-    0xE0,               // health
+    // START: MODIFIED
+    0x50,               // healthCapacity
+    0x50,               // health
+    // END: MODIFIED; Added comments to indicate what each value represents
     0,                  // magicLevel
     MAGIC_NORMAL_METER, // magic
     150,                // rupees
@@ -310,7 +314,7 @@ static Inventory sDebugSaveInventory = {
         ITEM_BOTTLE_POTION_RED,   // SLOT_BOTTLE_2
         ITEM_BOTTLE_POTION_GREEN, // SLOT_BOTTLE_3
         ITEM_BOTTLE_POTION_BLUE,  // SLOT_BOTTLE_4
-        ITEM_POCKET_EGG,          // SLOT_TRADE_ADULT
+        ITEM_CUSTOM_ITEM,         // SLOT_TRADE_ADULT ITEM_POCKET_EGG; MODIFIED; Added support for CUSTOM_ITEM in the adult trade slot in the inventory
         ITEM_WEIRD_EGG,           // SLOT_TRADE_CHILD
     },
     // ammo

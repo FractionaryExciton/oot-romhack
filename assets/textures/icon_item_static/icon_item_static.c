@@ -362,6 +362,14 @@ u64 gItemIconFishingPoleTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)]
 #include "assets/textures/icon_item_static/gItemIconFishingPoleTex.rgba32.inc.c"
 };
 
+// START: MODIFIED
+
+u64 gItemIconCustomItemTex[TEX_LEN(u64, ITEM_ICON_WIDTH, ITEM_ICON_HEIGHT, 32)] = {
+    #include "assets/textures/icon_item_static/gItemIconCustomItemTex.rgba32.inc.c"
+};
+
+// END: MODIFIED; Added icon texture for CUSTOM_ITEM
+
 // Heart piece icons textures
 
 u64 gHeartPieceIcon1Tex[TEX_LEN(u64, HEART_PIECE_ICON_TEX_WIDTH, HEART_PIECE_ICON_TEX_HEIGHT, 8)] = {
@@ -774,5 +782,109 @@ Gfx gPromptCursorLeftDL[10] = {
 };
 
 Gfx gPromptCursorRightDL[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex1[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex2[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex3[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex4[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex5[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex6[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex7[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex8[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex9[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex10[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex11[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex12[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex13[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex14[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex15[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex16[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex17[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex18[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex19[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex20[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex21[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex22[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex23[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex24[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex25[10] = {
+#include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
+};
+
+Gfx gPlaceholderTex26[10] = {
 #include "assets/textures/icon_item_static/gPromptCursorRightDL.inc.c"
 };

@@ -52,7 +52,11 @@ f32 Math_SinS(s16 angle) {
  */
 s32 Math_ScaledStepToS(s16* pValue, s16 target, s16 step) {
     if (step != 0) {
-        f32 updateScale = R_UPDATE_RATE * 0.5f;
+        // idk, if too high Link has schizophrenia, too low and you have to unpress your direction key to change direction
+        //default is 0.5f
+        // START: MODIFIED
+        f32 updateScale = R_UPDATE_RATE * 0.75f;
+        // END: MODIFIED; If 20 FPS is 0.5, 30 FPS is 0.75 ig
 
         if ((s16)(*pValue - target) > 0) {
             step = -step;

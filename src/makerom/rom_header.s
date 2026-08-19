@@ -20,17 +20,11 @@
 #else
 /* 0x3B */ MEDIUM(CARTRIDGE)
 #endif
+// START: MODIFIED
 /* 0x3C */ GAME_ID("ZL")
-#if OOT_REGION == REGION_US
 /* 0x3E */ REGION(US)
-#elif OOT_REGION == REGION_JP
-/* 0x3E */ REGION(JP)
-#elif OOT_REGION == REGION_EU
-/* 0x3E */ REGION(PAL)
-#else
-#error "Unknown OOT_REGION"
-#endif
 /* 0x3F */ GAME_REVISION(OOT_REVISION)
+// END: MODIFIED; Removed Non-US headers because of performance issues
 
 #else
 

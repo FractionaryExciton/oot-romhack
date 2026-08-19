@@ -372,6 +372,9 @@ DrawItemTableEntry sDrawItemTable[] = {
     { GetItem_DrawOpa0, { gGiKokiriSwordDL } },
     // GID_SKULL_TOKEN_2
     { GetItem_DrawSkullToken, { gSkulltulaTokenDL, gSkulltulaTokenFlameDL } },
+
+    // GID_CUSTOM_ITEM
+    //{ GetItem_DrawOpa0, { gGiBoomerangDL } },
 };
 
 /**

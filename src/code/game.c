@@ -491,7 +491,8 @@ void GameState_Init(GameState* gameState, GameStateFunc init, GraphicsContext* g
     startTime = endTime;
     GameState_InitArena(gameState, 0x100000);
 
-    R_UPDATE_RATE = 3;
+    // If R_UPDATE_RATE = 3: 20 FPS, 60 / 3 = 20
+    R_UPDATE_RATE = 2; // MODIFIED; Changed framerate from 20 to 30
     init(gameState);
     endTime = osGetTime();
     PRINTF(T("init 処理時間 %d us\n", "init processing time %d us\n"), OS_CYCLES_TO_USEC(endTime - startTime));

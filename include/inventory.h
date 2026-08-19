@@ -19,7 +19,9 @@ extern u8 gUpgradeShifts[UPG_MAX];
 extern u16 gUpgradeCapacities[UPG_MAX][4];
 extern u32 gGsFlagsMasks[4];
 extern u32 gGsFlagsShifts[4];
-extern void* gItemIcons[0x82];
-extern u8 gItemSlots[56];
+// START: MODIFIED
+extern void* gItemIcons[0x9D];
+extern u8 gItemSlots[57];
+// END: MODIFIED; Added extra item icons and slots for CUSTOM_ITEM
 
 #endif
