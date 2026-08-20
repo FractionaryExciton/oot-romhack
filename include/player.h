@@ -178,7 +178,39 @@ typedef enum PlayerItemAction {
     /* 0x40 */ PLAYER_IA_MASK_GERUDO,
     /* 0x41 */ PLAYER_IA_MASK_TRUTH,
     /* 0x42 */ PLAYER_IA_LENS_OF_TRUTH,
-    /* 0x43 */ PLAYER_IA_MAX
+    /* 0x43 */ PLAYER_IA_CUSTOM_ITEM,
+    // START: MODIFIED 
+    ///* 0x43 */ PLAYER_IA_PLACEHOLDER_1,
+    ///* 0x44 */ PLAYER_IA_PLACEHOLDER_2,
+    ///* 0x45 */ PLAYER_IA_PLACEHOLDER_3,
+    ///* 0x46 */ PLAYER_IA_PLACEHOLDER_4,
+    ///* 0x47 */ PLAYER_IA_PLACEHOLDER_5,
+    ///* 0x48 */ PLAYER_IA_PLACEHOLDER_6,
+    ///* 0x49 */ PLAYER_IA_PLACEHOLDER_7,
+    ///* 0x4A */ PLAYER_IA_PLACEHOLDER_8,
+    ///* 0x4B */ PLAYER_IA_PLACEHOLDER_9,
+    ///* 0x4C */ PLAYER_IA_PLACEHOLDER_10,
+    ///* 0x4D */ PLAYER_IA_PLACEHOLDER_11,
+    ///* 0x4E */ PLAYER_IA_PLACEHOLDER_12,
+    ///* 0x4F */ PLAYER_IA_PLACEHOLDER_13,
+    ///* 0x50 */ PLAYER_IA_PLACEHOLDER_14,
+    ///* 0x51 */ PLAYER_IA_PLACEHOLDER_15,
+    ///* 0x52 */ PLAYER_IA_PLACEHOLDER_16,
+    ///* 0x53 */ PLAYER_IA_PLACEHOLDER_17,
+    ///* 0x54 */ PLAYER_IA_PLACEHOLDER_18,
+    ///* 0x55 */ PLAYER_IA_PLACEHOLDER_19,
+    ///* 0x56 */ PLAYER_IA_PLACEHOLDER_20,
+    ///* 0x57 */ PLAYER_IA_PLACEHOLDER_21,
+    ///* 0x58 */ PLAYER_IA_PLACEHOLDER_22,
+    ///* 0x59 */ PLAYER_IA_PLACEHOLDER_23,
+    ///* 0x5A */ PLAYER_IA_PLACEHOLDER_24,
+    ///* 0x5B */ PLAYER_IA_PLACEHOLDER_25,
+    ///* 0x5C */ PLAYER_IA_PLACEHOLDER_26,
+    ///* 0x5D */ PLAYER_IA_PLACEHOLDER_27,
+    ///* 0x5E */ PLAYER_IA_PLACEHOLDER_28,
+    /* 0x5F */ PLAYER_IA_MAX
+    //END: MODIFIED; Added padding, support for rocs feather and hex values
+    // HAS TO BE IMPLEMENTED IN src/overlays/actors/ovl_player_actor/z_player.c
 } PlayerItemAction;
 
 typedef enum PlayerLimb {
