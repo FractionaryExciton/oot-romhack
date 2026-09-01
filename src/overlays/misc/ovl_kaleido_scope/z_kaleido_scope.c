@@ -3952,13 +3952,13 @@ void KaleidoScope_Update(PlayState* play) {
             if (GET_EVENTCHKINF(EVENTCHKINF_09)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_MARKET] = WORLD_MAP_POINT_STATE_HIGHLIGHT;
             }
-            if (GET_EVENTCHKINF(EVENTCHKINF_40)) {
+            if (GET_EVENTCHKINF(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_MARKET] = WORLD_MAP_POINT_STATE_SHOW;
             }
             if (INV_CONTENT(ITEM_OCARINA_OF_TIME) == ITEM_OCARINA_OF_TIME) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_MARKET] = WORLD_MAP_POINT_STATE_HIGHLIGHT;
             }
-            if (GET_EVENTCHKINF(EVENTCHKINF_45)) {
+            if (GET_EVENTCHKINF(EVENTCHKINF_OBTAINED_MASTER_SWORD)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_MARKET] = WORLD_MAP_POINT_STATE_SHOW;
             }
             if (INV_CONTENT(ITEM_ARROW_LIGHT) == ITEM_ARROW_LIGHT) {
@@ -3969,7 +3969,7 @@ void KaleidoScope_Update(PlayState* play) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_HYRULE_FIELD] = WORLD_MAP_POINT_STATE_SHOW;
             }
 
-            if (GET_EVENTCHKINF(EVENTCHKINF_40)) {
+            if (GET_EVENTCHKINF(EVENTCHKINF_OBTAINED_ZELDAS_LETTER)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_DEATH_MOUNTAIN] = WORLD_MAP_POINT_STATE_HIGHLIGHT;
             }
             if (GET_EVENTCHKINF(EVENTCHKINF_25)) {
@@ -3991,7 +3991,7 @@ void KaleidoScope_Update(PlayState* play) {
             if (CHECK_QUEST_ITEM(QUEST_SONG_SUN)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_KAKARIKO_VILLAGE] = WORLD_MAP_POINT_STATE_SHOW;
             }
-            if (GET_EVENTCHKINF(EVENTCHKINF_45)) {
+            if (GET_EVENTCHKINF(EVENTCHKINF_OBTAINED_MASTER_SWORD)) {
                 pauseCtx->worldMapPoints[WORLD_MAP_POINT_KAKARIKO_VILLAGE] = WORLD_MAP_POINT_STATE_HIGHLIGHT;
             }
             if (INV_CONTENT(ITEM_HOOKSHOT) == ITEM_HOOKSHOT) {
