@@ -1371,10 +1371,103 @@ static s8 sItemActions[] = {
     PLAYER_IA_SWORD_KOKIRI,        // ITEM_SWORD_KOKIRI        0x3B
     PLAYER_IA_SWORD_MASTER,        // ITEM_SWORD_MASTER        0x3C
     PLAYER_IA_SWORD_BIGGORON,      // ITEM_SWORD_BIGGORON      0x3D
-    PLAYER_IA_CUSTOM_ITEM,         // ITEM_CUSTOM_ITEM         0x3E
-    // START: MODIFIED
-    // PLAYER_IA_PLACEHOLDER_1,    // PLACEHOLDER
-    // END: MODIFIED; Added padding (necessary?) and support for rocs feather
+    // START: MODIFIED; padding computed to place custom item at its real ID (0x9C)
+    PLAYER_IA_NONE, // unused 0x3E
+    PLAYER_IA_NONE, // unused 0x3F
+    PLAYER_IA_NONE, // unused 0x40
+    PLAYER_IA_NONE, // unused 0x41
+    PLAYER_IA_NONE, // unused 0x42
+    PLAYER_IA_NONE, // unused 0x43
+    PLAYER_IA_NONE, // unused 0x44
+    PLAYER_IA_NONE, // unused 0x45
+    PLAYER_IA_NONE, // unused 0x46
+    PLAYER_IA_NONE, // unused 0x47
+    PLAYER_IA_NONE, // unused 0x48
+    PLAYER_IA_NONE, // unused 0x49
+    PLAYER_IA_NONE, // unused 0x4A
+    PLAYER_IA_NONE, // unused 0x4B
+    PLAYER_IA_NONE, // unused 0x4C
+    PLAYER_IA_NONE, // unused 0x4D
+    PLAYER_IA_NONE, // unused 0x4E
+    PLAYER_IA_NONE, // unused 0x4F
+    PLAYER_IA_NONE, // unused 0x50
+    PLAYER_IA_NONE, // unused 0x51
+    PLAYER_IA_NONE, // unused 0x52
+    PLAYER_IA_NONE, // unused 0x53
+    PLAYER_IA_NONE, // unused 0x54
+    PLAYER_IA_NONE, // unused 0x55
+    PLAYER_IA_NONE, // unused 0x56
+    PLAYER_IA_NONE, // unused 0x57
+    PLAYER_IA_NONE, // unused 0x58
+    PLAYER_IA_NONE, // unused 0x59
+    PLAYER_IA_NONE, // unused 0x5A
+    PLAYER_IA_NONE, // unused 0x5B
+    PLAYER_IA_NONE, // unused 0x5C
+    PLAYER_IA_NONE, // unused 0x5D
+    PLAYER_IA_NONE, // unused 0x5E
+    PLAYER_IA_NONE, // unused 0x5F
+    PLAYER_IA_NONE, // unused 0x60
+    PLAYER_IA_NONE, // unused 0x61
+    PLAYER_IA_NONE, // unused 0x62
+    PLAYER_IA_NONE, // unused 0x63
+    PLAYER_IA_NONE, // unused 0x64
+    PLAYER_IA_NONE, // unused 0x65
+    PLAYER_IA_NONE, // unused 0x66
+    PLAYER_IA_NONE, // unused 0x67
+    PLAYER_IA_NONE, // unused 0x68
+    PLAYER_IA_NONE, // unused 0x69
+    PLAYER_IA_NONE, // unused 0x6A
+    PLAYER_IA_NONE, // unused 0x6B
+    PLAYER_IA_NONE, // unused 0x6C
+    PLAYER_IA_NONE, // unused 0x6D
+    PLAYER_IA_NONE, // unused 0x6E
+    PLAYER_IA_NONE, // unused 0x6F
+    PLAYER_IA_NONE, // unused 0x70
+    PLAYER_IA_NONE, // unused 0x71
+    PLAYER_IA_NONE, // unused 0x72
+    PLAYER_IA_NONE, // unused 0x73
+    PLAYER_IA_NONE, // unused 0x74
+    PLAYER_IA_NONE, // unused 0x75
+    PLAYER_IA_NONE, // unused 0x76
+    PLAYER_IA_NONE, // unused 0x77
+    PLAYER_IA_NONE, // unused 0x78
+    PLAYER_IA_NONE, // unused 0x79
+    PLAYER_IA_NONE, // unused 0x7A
+    PLAYER_IA_NONE, // unused 0x7B
+    PLAYER_IA_NONE, // unused 0x7C
+    PLAYER_IA_NONE, // unused 0x7D
+    PLAYER_IA_NONE, // unused 0x7E
+    PLAYER_IA_NONE, // unused 0x7F
+    PLAYER_IA_NONE, // unused 0x80
+    PLAYER_IA_NONE, // unused 0x81
+    PLAYER_IA_NONE, // unused 0x82
+    PLAYER_IA_NONE, // unused 0x83
+    PLAYER_IA_NONE, // unused 0x84
+    PLAYER_IA_NONE, // unused 0x85
+    PLAYER_IA_NONE, // unused 0x86
+    PLAYER_IA_NONE, // unused 0x87
+    PLAYER_IA_NONE, // unused 0x88
+    PLAYER_IA_NONE, // unused 0x89
+    PLAYER_IA_NONE, // unused 0x8A
+    PLAYER_IA_NONE, // unused 0x8B
+    PLAYER_IA_NONE, // unused 0x8C
+    PLAYER_IA_NONE, // unused 0x8D
+    PLAYER_IA_NONE, // unused 0x8E
+    PLAYER_IA_NONE, // unused 0x8F
+    PLAYER_IA_NONE, // unused 0x90
+    PLAYER_IA_NONE, // unused 0x91
+    PLAYER_IA_NONE, // unused 0x92
+    PLAYER_IA_NONE, // unused 0x93
+    PLAYER_IA_NONE, // unused 0x94
+    PLAYER_IA_NONE, // unused 0x95
+    PLAYER_IA_NONE, // unused 0x96
+    PLAYER_IA_NONE, // unused 0x97
+    PLAYER_IA_NONE, // unused 0x98
+    PLAYER_IA_NONE, // unused 0x99
+    PLAYER_IA_NONE, // unused 0x9A
+    PLAYER_IA_NONE, // unused 0x9B
+    PLAYER_IA_CUSTOM_ITEM,         // ITEM_CUSTOM_ITEM         0x9C
+    // END: MODIFIED
 };
 
 static s32 (*sItemActionUpdateFuncs[])(Player* this, PlayState* play) = {
@@ -3566,7 +3659,7 @@ void Player_UseItem(PlayState* play, Player* this, s32 item) {
             } else if (itemAction == PLAYER_IA_CUSTOM_ITEM) {
                 // Handle CUSTOM ITEM
                 Sfx_PlaySfxCentered(NA_SE_SY_ERROR);
-                Player_TryRoll(this, play);
+                LinkAnimation_PlayOnce(play, &this->skelAnime, &gPlayerAnim_link_fighter_front_jump);
 
             } else if (itemAction == PLAYER_IA_LENS_OF_TRUTH) {
                 // Handle Lens of Truth
