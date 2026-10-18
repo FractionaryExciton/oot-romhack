@@ -998,7 +998,7 @@ void Actor_UpdateVelocityXZGravity(Actor* actor) {
     actor->velocity.x = actor->speed * Math_SinS(actor->world.rot.y);
     actor->velocity.z = actor->speed * Math_CosS(actor->world.rot.y);
 
-    actor->velocity.y += actor->gravity;
+    actor->velocity.y += actor->gravity * (R_UPDATE_RATE * 0.35f);
 
     if (actor->velocity.y < actor->minVelocityY) {
         actor->velocity.y = actor->minVelocityY;

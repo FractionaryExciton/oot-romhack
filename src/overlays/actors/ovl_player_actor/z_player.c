@@ -186,6 +186,8 @@ s32 func_80835C08(Player* this, PlayState* play);
 // MINE
 void Player_SetupRoll(Player* this, PlayState* play);
 s32 Player_TryRoll(Player* this, PlayState* play);
+void func_80838940(Player* this, LinkAnimationHeader* anim, f32 arg2, PlayState* play, u16 sfxId);
+//func_80838940(this, &gPlayerAnim_link_fighter_front_jump, 6.0f, play, NA_SE_VO_LI_AUTO_JUMP);
 
 void Player_UseItem(PlayState* play, Player* this, s32 item);
 void func_80839F90(Player* this, PlayState* play);
@@ -3641,11 +3643,11 @@ void Player_UseItem(PlayState* play, Player* this, s32 item) {
     if (((this->heldItemAction == this->itemAction) &&
          (!(this->stateFlags1 & PLAYER_STATE1_SHIELDING) || (Player_ActionToMeleeWeapon(itemAction) != 0) ||
           (itemAction == PLAYER_IA_NONE))) ||
-        ((this->itemAction < 0) && ((Player_ActionToMeleeWeapon(itemAction) != 0) || (itemAction == PLAYER_IA_NONE))) || (itemAction == PLAYER_IA_CUSTOM_ITEM)) {
+        ((this->itemAction < 0) && ((Player_ActionToMeleeWeapon(itemAction) != 0) || (itemAction == PLAYER_IA_NONE)))) /*|| (itemAction == PLAYER_IA_CUSTOM_ITEM))*/ {
 
         if ((itemAction == PLAYER_IA_NONE) || !(this->stateFlags1 & PLAYER_STATE1_27) ||
             ((this->actor.bgCheckFlags & BGCHECKFLAG_GROUND) &&
-             ((itemAction == PLAYER_IA_HOOKSHOT) || (itemAction == PLAYER_IA_LONGSHOT))) || (itemAction == PLAYER_IA_CUSTOM_ITEM)) {
+             ((itemAction == PLAYER_IA_HOOKSHOT) || (itemAction == PLAYER_IA_LONGSHOT)))) /*|| (itemAction == PLAYER_IA_CUSTOM_ITEM))*/ {
 
             if ((play->bombchuBowlingStatus == 0) &&
                 (((itemAction == PLAYER_IA_DEKU_STICK) && (AMMO(ITEM_DEKU_STICK) == 0)) ||
@@ -3658,8 +3660,14 @@ void Player_UseItem(PlayState* play, Player* this, s32 item) {
                 Sfx_PlaySfxCentered(NA_SE_SY_ERROR);
             } else if (itemAction == PLAYER_IA_CUSTOM_ITEM) {
                 // Handle CUSTOM ITEM
-                Sfx_PlaySfxCentered(NA_SE_SY_ERROR);
-                LinkAnimation_PlayOnce(play, &this->skelAnime, &gPlayerAnim_link_fighter_front_jump);
+                //Sfx_PlaySfxCentered(NA_SE_SY_ERROR);
+                //func_80838940(this, &gPlayerAnim_link_fighter_front_jump, 6.0f, play, NA_SE_VO_LI_AUTO_JUMP);
+                if (this->actor.bgCheckFlags & BGCHECKFLAG_GROUND) {
+                    func_80838940(this, &gPlayerAnim_link_fighter_front_jump, 6.0f, play, NA_SE_VO_LI_AUTO_JUMP);
+                } else {
+                    Sfx_PlaySfxCentered(NA_SE_SY_ERROR);
+                }
+                //LinkAnimation_PlayOnce(play, &this->skelAnime, &gPlayerAnim_link_fighter_front_jump);
 
             } else if (itemAction == PLAYER_IA_LENS_OF_TRUTH) {
                 // Handle Lens of Truth
@@ -16326,72 +16334,3 @@ void Player_StartTalking(PlayState* play, Actor* actor) {
         Player_SetTurnAroundCamera(play, CAM_ITEM_TYPE_11);
     }
 }
-
-/*
-
-void Player_SetupRoll(Player* this, PlayState* play) {
-    Player_SetupAction(play, this, Player_Action_Roll, 0);
-    LinkAnimation_PlayOnceSetSpeed(play, &this->skelAnime,
-                                   GET_PLAYER_ANIM(PLAYER_ANIMGROUP_landing_roll, this->modelAnimType),
-                                   FRAMERATE_CONST(1.25f, 1.5f) * sWaterSpeedFactor);
-}
-
-*/
-
-/*
-
-void Player_InitItemActionWithAnim(PlayState* play, Player* this, s8 itemAction) {
-    LinkAnimationHeader* current = this->skelAnime.animation;
-    LinkAnimationHeader** iter = D_80853914 + this->modelAnimType;
-    u32 animGroup;
-
-    // This is redundant, the same two flags get unset in
-    // `Player_InitItemAction` called below.
-    this->stateFlags1 &= ~(PLAYER_STATE1_3 | PLAYER_STATE1_USING_BOOMERANG);
-
-    for (animGroup = 0; animGroup < PLAYER_ANIMGROUP_MAX; animGroup++) {
-        if (current == *iter) {
-            break;
-        }
-        iter += PLAYER_ANIMTYPE_MAX;
-    }
-
-    Player_InitItemAction(play, this, itemAction);
-
-    if (animGroup < PLAYER_ANIMGROUP_MAX) {
-        this->skelAnime.animation = GET_PLAYER_ANIM(animGroup, this->modelAnimType);
-    }
-}
-
-*/
-
-/*
-
-void Player_InitItemAction(PlayState* play, Player* this, s8 itemAction) {
-    this->unk_85C = 0.0f;
-    this->unk_858 = 0.0f;
-    this->unk_860 = 0;
-
-    this->heldItemAction = this->itemAction = itemAction;
-    this->modelGroup = this->nextModelGroup;
-
-#if OOT_VERSION >= NTSC_1_1
-    this->stateFlags1 &= ~(PLAYER_STATE1_3 | PLAYER_STATE1_USING_BOOMERANG);
-#endif
-
-    sItemActionInitFuncs[itemAction](play, this);
-
-    Player_SetModelGroup(this, this->modelGroup);
-}
-
-*/
-
-/*
-
-if (CHECK_BTN_ANY(sControlInput->press.button, BTN_CLEFT | BTN_CDOWN | BTN_CRIGHT)) {
-        this->av2.actionVar2 += 5;
-    }
-
-*/
-
-//void Player_
