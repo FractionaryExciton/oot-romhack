@@ -12,6 +12,10 @@
 #include "game.h"
 #include "view.h"
 
+// START: MODIFIED
+#include "libu64/gfxprint.h"
+// END: MODIFIED; Added sum shi i dont know
+
 /**
  * How much time the audio update on the audio thread (`AudioThread_Update`) took in total, between scheduling the last
  * two graphics tasks.
@@ -283,3 +287,23 @@ void SpeedMeter_DrawAllocEntries(SpeedMeter* meter, GraphicsContext* gfxCtx, Gam
     SpeedMeter_DrawAllocEntry(&entry, gfxCtx);
     y++;
 }
+
+// START: MODIFIED
+void SpeedMeter_PrintTimes(Gfx** gfx) {
+    GfxPrint printer;
+
+    GfxPrint_Init(&printer);
+    GfxPrint_Open(&printer, *gfx);
+    GfxPrint_SetColor(&printer, 255, 255, 255, 255);
+
+    GfxPrint_SetPos(&printer, 4, 6);
+    GfxPrint_Printf(&printer, "GFX %6d us", (s32)OS_CYCLES_TO_USEC(gRSPGfxTimeTotal));
+    GfxPrint_SetPos(&printer, 4, 7);
+    GfxPrint_Printf(&printer, "RDP %6d us", (s32)OS_CYCLES_TO_USEC(gRDPTimeTotal));
+    GfxPrint_SetPos(&printer, 4, 8);
+    GfxPrint_Printf(&printer, "AUD %6d us", (s32)OS_CYCLES_TO_USEC(gRSPAudioTimeTotal));
+
+    *gfx = GfxPrint_Close(&printer);
+    GfxPrint_Destroy(&printer);
+}
+// END: MODIFIED; added support from drawing digits for debugging

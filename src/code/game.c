@@ -242,10 +242,25 @@ void GameState_Draw(GameState* gameState, GraphicsContext* gfxCtx) {
 
     Debug_DrawText(gfxCtx);
 
-    if (R_ENABLE_ARENA_DBG != 0) {
+    // START: MODIFIED
+    if (R_ENABLE_SPEED_METER != 0) {
+        Gfx* displayList;
+        Gfx* prevDisplayList;
+
         SpeedMeter_DrawTimeEntries(&D_801664D0, gfxCtx);
         SpeedMeter_DrawAllocEntries(&D_801664D0, gfxCtx, gameState);
+
+        OPEN_DISPS(gfxCtx, "../game.c", 9100);
+        prevDisplayList = POLY_OPA_DISP;
+        displayList = Gfx_Open(POLY_OPA_DISP);
+        gSPDisplayList(OVERLAY_DISP++, displayList);
+        SpeedMeter_PrintTimes(&displayList);
+        gSPEndDisplayList(displayList++);
+        Gfx_Close(prevDisplayList, displayList);
+        POLY_OPA_DISP = displayList;
+        CLOSE_DISPS(gfxCtx, "../game.c", 9101);
     }
+    // END: MODIFIED; Did some shi
 }
 
 void GameState_SetFrameBuffer(GraphicsContext* gfxCtx) {
@@ -490,8 +505,11 @@ void GameState_Init(GameState* gameState, GameStateFunc init, GraphicsContext* g
     startTime = endTime;
     GameState_InitArena(gameState, 0x100000);
 
+    // START: MODIFIED
     // If R_UPDATE_RATE = 3: 20 FPS, 60 / 3 = 20
-    R_UPDATE_RATE = 2; // MODIFIED; Changed framerate from 20 to 30
+    R_UPDATE_RATE = 2;
+    R_ENABLE_SPEED_METER = 1;
+    // END: MODIFIED; Changed from 20 FPS to 30 & enabled debug
     init(gameState);
     endTime = osGetTime();
     PRINTF(T("init 処理時間 %d us\n", "init processing time %d us\n"), OS_CYCLES_TO_USEC(endTime - startTime));

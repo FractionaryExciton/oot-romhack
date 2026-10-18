@@ -54,6 +54,7 @@ struct PlayState;
 #define R_DECELERATE_RATE                        REG(43)
 #define R_RUN_SPEED_LIMIT                        REG(45)
 #define R_ENABLE_ARENA_DBG                       SREG(0)
+#define R_ENABLE_SPEED_METER                     SREG(4) // MODIFIED: Added register for speed_meter
 #define R_AUDIOMGR_ACTIVITY_LEVEL                SREG(20)
 #define R_ROOM_IMAGE_NODRAW_FLAGS                SREG(25)
 #define R_ROOM_BG2D_FORCE_SCALEBG                SREG(26)
