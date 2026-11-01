@@ -31,7 +31,7 @@ void SpeedMeter_Destroy(SpeedMeter* this);
 void SpeedMeter_DrawTimeEntries(SpeedMeter* this, struct GraphicsContext* gfxCtx);
 void SpeedMeter_DrawAllocEntries(SpeedMeter* meter, struct GraphicsContext* gfxCtx, struct GameState* state);
 // START: MODIFIED
-void SpeedMeter_PrintTimes(Gfx** gfx)
+void SpeedMeter_PrintTimes(Gfx** gfx);
 // END: MODIFIED; added function declarations
 
 #endif
